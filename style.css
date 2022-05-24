@@ -160,19 +160,6 @@ h3 {
     rgba(0, 0, 0, 0.25);
 }
 
-#big-title{
-    font-family: 'Gelasio';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 80px;
-    line-height: 102px;
-    color: #EDEEE6;
-
-    display: flex;
-    align-items: center;
-    text-align: center;
-    letter-spacing: 0.02em;
-}
 
 /*** COLORS ***/
 .primary-bistre {
@@ -324,4 +311,40 @@ h3 {
 
 .footer-pipe{
     margin: 12px;
+}
+
+#big-title{
+    font-family: 'Gelasio';
+    font-style: normal;
+    width: 970px;
+    font-weight: 700;
+    font-size: 80px;
+    line-height: 102px;
+    color: #EDEEE6;
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.02em;
+}
+
+#homepage-text-elements{
+
+}
+
+#homepage-textbox1{
+    width: 824px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    text-align: right
+}
+
+#homepage-textbox2{
+    width: 824px;
+    height: 190px;
+    display: flex;
+    align-items: center;
+    text-align: right;
+
 }
