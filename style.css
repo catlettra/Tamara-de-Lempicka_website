@@ -1,0 +1,327 @@
+@charset "UTF-8";
+
+/************* CSS RESET ***********/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+/* remember to highlight inserts somehow! */
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/************* CUSTOM CSS ***********/
+
+/*** TYPOGRAPHY ***/
+
+h1 {
+    font-family: 'Gelasio', sans-serif;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 48px;
+	line-height: 150%;
+    letter-spacing: 0.02em;
+}
+
+h2 {
+    font-family: 'Gelasio', serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 125%;
+	letter-spacing: 0.02em;
+}
+
+h3 {
+    font-family: 'Gelasio', serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+	line-height: 41px;
+}
+
+.subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+	line-height: 36px;
+}
+
+.body-copy {
+	font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 180%;
+}
+
+.body-italic {
+	font-family: 'Poppins', sans-serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 180%;
+}
+
+.body-strong {
+	font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 180%;
+}
+
+.body-small {
+	font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.pretitle {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+    text-transform: uppercase;
+}
+
+.button-text {
+	font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+	text-transform: uppercase;
+}
+
+.link-text {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+	text-decoration-line: underline;
+}
+
+.cursive {
+    font-style: italic;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.text-shadow{
+    text-shadow: 2px 4px 4px
+    rgba(0, 0, 0, 0.25);
+}
+
+#big-title{
+    font-family: 'Gelasio';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 80px;
+    line-height: 102px;
+    color: #EDEEE6;
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.02em;
+}
+
+/*** COLORS ***/
+.primary-bistre {
+    color: #27140B;
+}
+
+.secondary-alloy_orange {
+    color: #C4671C;
+}
+
+.dark-dark_brown {
+    color: #160903;
+}
+
+.light-alabaster {
+    color: #EDEEE6;
+}
+
+.text-white {
+    color: #FAFAFA;
+}
+
+/*** BACKGROUND ***/
+
+#background-homepage {
+    background-image: url(img/BG.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+    min-width: 1024px;
+	min-height: 768px;
+	width: 1920px; /* dovrebbe andare con le percentuali porcod */
+	height: 1375px;
+	display: block;
+    padding-top: 60px;
+}
+
+.background{
+    background-color: #160903;
+    min-width: 1024px;
+	min-height: 768px;
+	width: 100%;
+	height: 100%;
+}
+
+/*** TOPBAR ***/
+
+.container-menu{
+    width:100%;
+    height: 60px;
+    max-width:1920px;
+    min-width: 1024px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    justify-content: space-between; /* per allineare centralmente il menu (logo + items) */
+    border-bottom: solid 1px #EDEEE6;
+    background-color: #27140B;
+}
+
+.menu {
+    width: 100%;
+    min-width: 1024px;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2; /*per far restare in alto il menu mentre gli altri elementi scorrono*/
+}
+
+.logo {
+    width: 45%; 
+    padding-left: 6.25%;
+}
+
+.menu-flexbox{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    width: 55%;
+    padding-right: 6.25%;
+}
+
+.menu-flexbox li {
+    text-align: center;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.menu-flexbox li a {
+    text-decoration: none;
+}
+
+.active {
+    font-size: 20px;
+    color: #C4671C;
+}
+
+
+/*** FOOTER ***/
+
+.container-footer{
+    width:1920px; /* dovrebbe andare con le percentuali porcod*/
+    height: 220px;
+    max-width:1920px; 
+    min-width: 1024px;
+    margin: auto; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: solid 1px #EDEEE6;
+    background-color: #27140B;
+}
+
+.footer-elements{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer-paragraph{
+    margin-bottom: 40px;
+}
+.footer-icons{
+    margin-bottom: 40px;
+    justify-content: space-around;
+}
+
+#wikipedia{
+    margin-right: 60px;
+}
+
+#treccani{
+    margin-right: 60px;
+}
+
+#encyclopedia{
+    margin-right: 60px;
+}
+
+/* #link{
+    
+} */
+
+.footer-pipe{
+    margin: 12px;
+}
