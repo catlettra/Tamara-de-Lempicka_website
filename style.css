@@ -50,12 +50,24 @@ table {
 	border-spacing: 0;
 }
 
-/************* CUSTOM CSS ***********/
+/************* HIDE SCROLLBAR *************/
+html{
+    -ms-overflow-style: none;  /* For Internet Explorer 10+ */
+    scrollbar-width: none;  /* For Firefox */
+}
+
+html::-webkit-scrollbar { 
+    display: none;  /* For Safari and Chrome */
+}
+
+
+
+/************* CUSTOM CSS *************/
 
 /*** TYPOGRAPHY ***/
 
 h1 {
-    font-family: 'Gelasio', sans-serif;
+    font-family: 'Gelasio', serif;
 	font-style: normal;
 	font-weight: 700;
 	font-size: 48px;
@@ -83,7 +95,7 @@ h3 {
 .subtitle {
     font-family: 'Poppins', sans-serif;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 300;
     font-size: 24px;
 	line-height: 36px;
 }
@@ -91,7 +103,7 @@ h3 {
 .body-copy {
 	font-family: 'Poppins', sans-serif;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 300; /* su figma è 400 ma oc */
     font-size: 16px;
     line-height: 180%;
 }
@@ -115,7 +127,7 @@ h3 {
 .body-small {
 	font-family: 'Poppins', sans-serif;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 300;
     font-size: 14px;
     line-height: 21px;
 }
@@ -160,6 +172,9 @@ h3 {
     rgba(0, 0, 0, 0.25);
 }
 
+p {
+    color: #FAFAFA;
+}
 
 /*** COLORS ***/
 .primary-bistre {
@@ -184,56 +199,67 @@ h3 {
 
 /*** BACKGROUND ***/
 
-#background-homepage {
-    background-image: url(img/BG.png);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
-    min-width: 1024px;
-	min-height: 768px;
-	width: 1920px; /* dovrebbe andare con le percentuali porcod */
-	height: 1375px;
-	display: block;
-    padding-top: 60px;
-}
-
 .background{
     background-color: #160903;
-    min-width: 1024px;
-	min-height: 768px;
 	width: 100%;
 	height: 100%;
 }
+
+.fit-box { /* to make sure all the elements stay within the grid borders */
+    display: flex;
+    max-height: 100%;
+    max-width: 87.5%;
+    padding-left: 6.25%;
+    padding-right: 6.25%;
+    padding-top: 60px;
+    flex-direction: column;
+}
+
+.img-border {
+    border: 1px solid #EDEEE6;
+  }
+
 
 /*** TOPBAR ***/
 
 .container-menu{
     width:100%;
     height: 60px;
-    max-width:1920px;
-    min-width: 1024px;
     margin: auto;
     display: flex;
     flex-direction: row;
     position: fixed;
-    justify-content: space-between; /* per allineare centralmente il menu (logo + items) */
+    justify-content: space-between; /* to align centrally the menu (logo + items) */
     border-bottom: solid 1px #EDEEE6;
     background-color: #27140B;
 }
 
 .menu {
     width: 100%;
-    min-width: 1024px;
     height: 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 2; /*per far restare in alto il menu mentre gli altri elementi scorrono*/
+    z-index: 2;
 }
 
 .logo {
-    width: 45%; 
+    width: 35%; 
     padding-left: 6.25%;
+}
+
+.logo p {
+    color:#C4671C;
+    font-family: 'Gelasio';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
 }
 
 .menu-flexbox{
@@ -242,8 +268,8 @@ h3 {
     align-items: center;
     justify-content: center;
     height: 60px;
-    width: 55%;
-    padding-right: 6.25%;
+    width: 60%;
+    padding-right: 3%;
 }
 
 .menu-flexbox li {
@@ -260,17 +286,70 @@ h3 {
 .active {
     font-size: 20px;
     color: #C4671C;
+    transition-duration: 0.2s;
 }
 
+a:hover {
+    color: #C4671C;
+    transition-duration: 0.2s;
+}
+
+/* DROPDOWN MENU (Personaggio)*/
+
+.dropdown-btn{
+    position: relative; 
+    display: inline-block;
+  }
+  
+  .dropdown-menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 6px;
+    padding-left: 0px; 
+  }
+  
+  .dropdown-menu li{
+    padding: 2px 0px;
+    width: 130px;
+    text-align: center;
+  }
+  
+  .dropdown-menu li:hover{
+    color: #C4671C;
+    background-color: #27140B;
+  }
+  
+  .dropdown{
+    display: none; 
+    position: absolute; 
+    background-color: #27140B;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-btn:hover .dropdown{
+    display: block;
+  }
+
+  #dropdown-hr{
+      width: 108px;
+      height: 1px;
+      background-color: #EDEEE6;
+      border: 0 none;
+      align-items: center;
+  }
+
+  #last-element{
+      padding-bottom: 8px;
+  }
 
 /*** FOOTER ***/
 
 .container-footer{
-    width:1920px; /* dovrebbe andare con le percentuali porcod*/
+    width: 100%;
     height: 220px;
-    max-width:1920px; 
-    min-width: 1024px;
-    margin: auto; 
+    margin: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -288,10 +367,18 @@ h3 {
 .footer-paragraph{
     margin-bottom: 40px;
 }
+
+/* FOOTER ICONS */
+
 .footer-icons{
     margin-bottom: 40px;
     justify-content: space-around;
 }
+
+.icon:hover img{ 
+    transform: scale(1.3);
+    transition-duration: 0.3s;
+    }
 
 #wikipedia{
     margin-right: 60px;
@@ -305,18 +392,36 @@ h3 {
     margin-right: 60px;
 }
 
-/* #link{
-    
-} */
-
 .footer-pipe{
     margin: 12px;
+}
+
+.menu-pt2 span a {
+    text-decoration: none;
+    color: #FAFAFA;
+}
+
+.menu-pt2 span a:hover{
+    color:#C4671C;
+    transition-duration: 0.2s;
+}
+
+/*** HOMEPAGE ***/
+
+#background-homepage {
+    background-image: url(img/BG.png);
+    background-repeat: no-repeat;
+    background-position: top 60px center;
+    background-size: cover;
+    display: block;
+    padding-top: 60px;
+    min-height: 1375px;
 }
 
 #big-title{
     font-family: 'Gelasio';
     font-style: normal;
-    width: 970px;
+    width: fit-content;
     font-weight: 700;
     font-size: 80px;
     line-height: 102px;
@@ -324,27 +429,223 @@ h3 {
 
     display: flex;
     align-items: center;
-    text-align: center;
+    text-align: right;
     letter-spacing: 0.02em;
+    margin-bottom: 56px;
+    margin-left: auto;
 }
 
-#homepage-text-elements{
-
+#homepage-text-elements {
+    padding-left: 6.25%;
+    padding-right: 6.25%;
+    display: block;
+    margin-top: 33.5%; /* 605px */
 }
 
 #homepage-textbox1{
-    width: 824px;
-    height: 58px;
-    display: flex;
-    align-items: center;
-    text-align: right
-}
-
-#homepage-textbox2{
-    width: 824px;
-    height: 190px;
+    width: fit-content;
+    height: fit-content;
     display: flex;
     align-items: center;
     text-align: right;
+    margin-bottom: 72px;
+    margin-left: auto;
 
 }
+
+#homepage-textbox2{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    margin-left: auto;
+}
+
+#index-links{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    margin-left: auto;
+    margin-top: 280px;
+}
+
+#index-links a {
+    text-decoration: none;
+    color: #FAFAFA;
+}
+
+#index-links a:hover{
+    color:#C4671C;
+    transition-duration: 0.2s;
+}
+
+/*** CURIOSITA' ***/
+
+.h1-center {
+    margin-top: 9%; /* 4.20% 148 */
+    text-align: center;
+    align-items: center;
+    margin-bottom: 18px; /* 0.50% 18px */
+}
+
+.subtitle-center {
+    text-align: center;
+    align-items: center;
+}
+
+.center-stuff {
+    display: block;
+    align-items: center;
+}
+
+.img-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#curiosita-intro{
+    margin-top: 4%; /* 60px */
+    margin-bottom: 5%; /* 106px */
+    max-width: 100%;
+    max-height: 100%;
+}
+
+ /* separatore */
+ .lines{ 
+    width: 668px;
+    height: 1px;
+    background-color: #EDEEE6;
+    border: 0 none;
+    margin-bottom: 9%; /* 145px */
+}
+
+.h2-curiosita{
+    margin-bottom: 42px;
+}
+
+.curiosita-repeated-img{
+    display: flex;
+    max-width: 55%; 
+    max-height: 100%;
+}
+
+.img-right{
+    float: right;
+}
+
+.img-left{
+    float: left;
+}
+
+.curiosita-box-right{
+    display: flex;
+    flex-direction: row;
+    padding-left: 8%; /* 142px */
+    align-items: center;
+    margin-bottom: 15%; /* 260px */  
+    width: fit-content;  /* figma 1537px idk*/ 
+    max-height: 15%;
+    overflow: hidden;
+}
+
+.curiosita-box-left{
+    display: flex;
+    flex-direction: row-reverse;
+    padding-right:8%; /* 142px */
+    align-items: center;
+    margin-bottom: 15%; /* 260px */   
+    width: fit-content;  
+    max-height: 15%;
+    overflow: hidden;
+}
+
+.curiosita-text-right{
+    display: flex;
+    flex-direction: column;
+    padding-right: 10%; /* 166px */
+    text-align: center;
+}
+
+.curiosita-text-left{
+    display: flex;
+    flex-direction: column;
+    padding-left: 10%; /* 166px */
+    text-align: center;
+}
+
+
+/*** GALLERY ***/
+#gallery-intro{
+    margin-top: 3%; /* 60px */
+    margin-bottom: 3%; /* 64px */
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#gallery-images{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15%;
+}
+
+#gallery-part1{
+    display: flex;
+    flex-direction: row;
+}
+
+#gallery-firstrow{
+    display: flex;
+    flex-direction: row;
+}
+
+#gallery-column{
+    display: flex;
+    flex-direction: column;
+}
+
+#gallery-part2{
+    display: flex;
+    flex-direction: row;
+}
+
+.gallery-column{
+    display: flex;
+    flex-direction: column
+}
+
+.gallery-img{
+    max-width: 100%;
+}
+
+.img-padding-left{
+    padding-left: 24px;
+}
+
+.img-padding-right{
+    padding-right: 24px;
+}
+
+.img-padding-bottom{
+    padding-bottom: 24px;
+}
+
+/*** PERSONAGGIO ***/
+
+#personaggio-introduction{
+    display: flex;
+    flex-direction: row;
+
+}
+
+#personaggio-customtext{
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+	line-height: 36px;
+}
+
