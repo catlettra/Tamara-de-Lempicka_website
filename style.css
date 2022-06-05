@@ -144,10 +144,11 @@ h3 {
 .button-text {
 	font-family: 'Poppins', sans-serif;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 16px;
     line-height: 24px;
 	text-transform: uppercase;
+    letter-spacing: 0.08em;
 }
 
 .link-text {
@@ -315,7 +316,11 @@ a:hover {
     text-align: center;
   }
   
-  .dropdown-menu li:hover{
+  .dropdown-menu li a{
+    color: #FAFAFA;
+}
+
+  .dropdown-menu li a:hover{
     color: #C4671C;
     background-color: #27140B;
   }
@@ -343,6 +348,7 @@ a:hover {
   #last-element{
       padding-bottom: 8px;
   }
+
 
 /*** FOOTER ***/
 
@@ -638,7 +644,17 @@ a:hover {
 #personaggio-introduction{
     display: flex;
     flex-direction: row;
+    margin-top: 8%;
+}
 
+#personaggio-textarea{
+    text-align: center;
+    align-items: center;
+}
+
+#personaggio-subtitle{
+    margin-top: 20px;
+    margin-bottom: 28px;
 }
 
 #personaggio-customtext{
@@ -647,5 +663,43 @@ a:hover {
     font-weight: 300;
     font-size: 20px;
 	line-height: 36px;
+    margin-bottom: 72px;
+    padding-left: 166px;
+    padding-right: 142px;
 }
 
+/* #buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+} useless mf */
+
+.button{
+    color: #fafafa;
+    background-color: #160903;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    height: 70px;
+    width: 180px;
+    margin-left: 36px;
+}
+
+/* gotta fix some issues */
+.button:hover{
+    border-color: #C4671C;
+    transition-duration: 0.2s;
+    transition-delay: 0.12s;
+}
+
+.button a{
+    text-decoration: none;
+    color: #FAFAFA;
+}
+
+.button a:hover{
+    color: #C4671C;
+    transition-duration: 0.2s;
+    border-color: #C4671C;
+} 
