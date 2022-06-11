@@ -1,7 +1,6 @@
 @charset "UTF-8";
 
 /************* CSS RESET ***********/
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -22,9 +21,11 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 body {
 	line-height: 1;
 }
-ol, ul {
-	list-style: none;
-}
+
+/* ol, ul {
+	list-style: none; 
+} morbius */ 
+
 blockquote, q {
 	quotes: none;
 }
@@ -59,8 +60,6 @@ html{
 html::-webkit-scrollbar { 
     display: none;  /* For Safari and Chrome */
 }
-
-
 
 /************* CUSTOM CSS *************/
 
@@ -165,7 +164,7 @@ h3 {
 }
 
 .bold {
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .text-shadow{
@@ -278,6 +277,7 @@ p {
     justify-content: space-between;
     margin-left: auto;
     margin-right: auto;
+    list-style: none;
 }
 
 .menu-flexbox li a {
@@ -368,6 +368,7 @@ a:hover {
     justify-content: center;
     flex-direction: column;
     text-align: center;
+    list-style: none;
 }
 
 .footer-paragraph{
@@ -476,6 +477,10 @@ a:hover {
     text-align: right;
     margin-left: auto;
     margin-top: 280px;
+}
+
+#index-links li{
+    list-style: none;
 }
 
 #index-links a {
@@ -590,17 +595,28 @@ a:hover {
     margin-bottom: 3%; /* 64px */
     max-width: 100%;
     max-height: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #gallery-images{
     display: flex;
     flex-direction: column;
     margin-bottom: 15%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #gallery-part1{
     display: flex;
     flex-direction: row;
+    width: 100%;
+}
+
+#gallery-firstpic{
+    height: fit-content;
+    width: fit-content;
+    max-width: 41%;
 }
 
 #gallery-firstrow{
@@ -611,20 +627,24 @@ a:hover {
 #gallery-column{
     display: flex;
     flex-direction: column;
+    max-width: 57.2%;
 }
 
 #gallery-part2{
     display: flex;
     flex-direction: row;
+    width: 100%;
 }
 
 .gallery-column{
     display: flex;
-    flex-direction: column
+    flex-direction: column;
+    max-width: 33.5%;
 }
 
 .gallery-img{
     max-width: 100%;
+    height: fit-content;
 }
 
 .img-padding-left{
@@ -668,8 +688,8 @@ a:hover {
 }
 
 #personaggio-subtitle{
-    margin-top: 20px;
-    margin-bottom: 60px;
+    margin-top: 2%;
+    margin-bottom: 6%;
     text-align: center;
     padding-left: 15%;
     padding-right: 12%;
@@ -715,25 +735,26 @@ a:hover {
 }
 
 #bio-img{
-    max-width: 40%;
+    width: 60%;
+    max-width: 60%;
     max-height: 100%;
     text-align: center;
     margin-top: auto;
     margin-bottom: auto;
 }
 
-#bio-img p{
-    margin-bottom: 46px;
-}
-
 #bio-img img{
     margin-left: 24px;
     margin-bottom: 32px;
-    max-width: 100%;
+    max-width: 94%;
+}
+
+#bio-img p{
+    margin-bottom: 6%;
 }
 
 #opere-text p{
-    margin-bottom: 40px;
+    margin-bottom: 3%;
     text-align: left;
 }
 
@@ -757,18 +778,18 @@ a:hover {
 
 #opere-section1{
     margin-right: 12px;
-    max-width: 23.5%;
+    max-width: 23.8%;
 }
 
 #opere-section2{
     margin-right: 12px;
     margin-left: 12px;
-    max-width: 23.5%;
+    max-width: 23.8%;
 }
 
 #opere-section3{
     margin-left: 12px;
-    max-width: 23.5%;
+    max-width: 23.8%;
 }
 
 #opere img{
@@ -782,11 +803,11 @@ a:hover {
 }
 
 #contributi{
-    margin-bottom: 8%;
+    margin-bottom: 6%;
 }
 
 #contributi h3{
-    margin-bottom: 60px;
+    margin-bottom: 4%;
 }
 
 #contributi-sleeper{
@@ -803,6 +824,7 @@ a:hover {
     max-width: 50%;
     height: fit-content;
     margin-right: 24px;
+    /*in 1024 the img has to stay on the top cuz centering it with the text would make it even uglier*/
 }
 
 #contributi-p{
@@ -811,13 +833,20 @@ a:hover {
     margin-bottom: auto;
 }
 #contributi-p p{
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: 2%;
+    margin-bottom: 2%;
     text-align: left;
 }
 
+#gallery-redirect{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 6%;
+}
 
-/* .button{
+.button{
     color: #fafafa;
     background-color: #160903;
     text-align: center;
@@ -826,4 +855,93 @@ a:hover {
     cursor: pointer;
     height: 70px;
     width: 260px;
-} */
+}
+
+a:hover .button{
+    color: #C4671C;
+    border-color: #C4671C;
+    transition-duration: 0.2s;
+    transition-delay: 0.1s;
+  }
+
+#gallery-btn{
+    margin-top: 3%;
+}
+
+
+#about-img{
+    display: flex;
+    flex-direction: row;
+}
+
+#about-img img{
+    max-width: 58%;
+    height: fit-content;
+}
+
+#opinions{
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+#opinions p{
+    text-align: center;
+}
+
+.opinions-who{
+    margin-bottom: 50%;
+    /* HMMMMMMMM with some risolutions it's ugly af but ok */
+}
+
+.last-opinion{
+    margin-bottom: 20%;
+}
+
+#sources{
+    margin-bottom: 15%;
+}
+
+#sources h2{
+    padding-bottom: 2.8%;
+}
+
+#sources-text{
+    display: flex;
+    flex-direction: row;
+}
+
+#sources-text ul{
+    padding-left: 20px;
+    padding-right: 4%;
+}
+
+#ul-elements{
+    padding-bottom: 27.5%;
+}
+
+#ul-last-element{
+    padding-bottom: 0;
+}
+
+#sources-text li a{
+    color: #FAFAFA;
+}
+
+#sources-text li a:hover{
+    color: #C4671C;
+}
+
+#sources-img{
+    max-width: 83%;
+    margin-left: auto; 
+    margin-right: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#sources-img img{
+    max-width: 100%;
+    height: fit-content;
+}
+
+/* The end */
