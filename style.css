@@ -337,7 +337,7 @@ a:hover {
     display: block;
   }
 
-  #dropdown-hr{
+  .dropdown-hr{
       width: 108px;
       height: 1px;
       background-color: #EDEEE6;
@@ -853,8 +853,9 @@ a:hover {
     text-decoration: none;
     display: inline-block;
     cursor: pointer;
-    height: 70px;
     width: 260px;
+    padding-top: 22px;
+    padding-bottom: 22px;
 }
 
 a:hover .button{
@@ -915,7 +916,7 @@ a:hover .button{
     padding-right: 4%;
 }
 
-#ul-elements{
+.ul-elements{
     padding-bottom: 27.5%;
 }
 
